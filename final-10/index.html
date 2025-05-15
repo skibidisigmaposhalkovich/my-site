@@ -3,117 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Приклад експертної системи</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        .example-textinput {
-            width: 100%;
-            margin: 10px 0;
-            padding: 8px;
-        }
-        .example-program {
-            height: 120px;
-        }
-        .example-button {
-            padding: 8px 16px;
-            background: #0056b3;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        .example-button:hover {
-            background: #004494;
-        }
-        .example-result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            min-height: 100px;
-        }
-    </style>
+    <title>МАЙСТЕР ГРИБОЧОК</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Приклад експертної системи</h1>
+    <h1>МАЙСТЕР ГРИБОЧОК</h1>
 
     <script src="https://cdn.jsdelivr.net/npm/tau-prolog@0.3.4/modules/core.min.js"></script>
 
     <div>
-        <h2>Program</h2>
+        <h2></h2>
         <textarea class="example-textinput example-program" id="program">
-person(jordan).
-person(chris).
-person(alex).
-person(blake).
-person(casey).
-person(sam).
-person(taylor).
+% mushroom(Name, StemColor, CapColor,
+%          MinStemLength, MaxStemLength,
+%          MinCapDiameter, MaxCapDiameter,
+%          MinStemDiameter, MaxStemDiameter,
+%          Edibility, Description).
 
-closer(alex).
-closer(casey).
-see(alex, blake).
-see(blake, casey).
-motive(alex).
-motive(casey).
-alibi(casey).
-alibi(blake).
+mushroom(cep, light_brown, dark_brown, 5, 20, 7, 30, 2, 10, edible, 'Має товсту м’ясисту ніжку і велику шапку.').
+mushroom(cep, white, dark_brown, 5, 20, 7, 30, 2, 10, edible, 'Має товсту м’ясисту ніжку і велику шапку.').
+mushroom(cep, light_brown, brown, 5, 20, 7, 30, 2, 10, edible, 'Має товсту м’ясисту ніжку і велику шапку.').
+mushroom(cep, white, brown, 5, 20, 7, 30, 2, 10, edible, 'Має товсту м’ясисту ніжку і велику шапку.').
+
+mushroom(fly_agaric, white, red, 10, 20, 5, 15, 1, 5, poisonous, 'Шапка Яскраво-червона з білими плямами ').
+
+mushroom(chanterelle, yellow, yellow, 3, 10, 2, 8, 1, 3, edible, 'Один із найбезпечніших грибів, Ніжка щільна, зливається з шапкою, того ж кольору.').
+
+mushroom(false_chanterelle, yellow, yellow, 3, 10, 2, 8, 1, 3, poisonous, 'Справжня лисичка відрізняється від несправжньої рівним жовтим кольором, а її ніжки досить товсті та порожнисті. Пори гриба завжди мають жовтий колір. У хибних лисичок ніжки тонкі, а суперечки білі.').
+
+mushroom(death_cap, white, green, 6, 15, 5, 12, 1, 3, poisonous, 'Один із найнебезпечніших грибів, легко сплутати з сироїжками чи шампіньйонами.').
+mushroom(death_cap, gray, green, 6, 15, 5, 12, 1, 3, poisonous, 'Один із найнебезпечніших грибів, легко сплутати з сироїжками чи шампіньйонами.').
+mushroom(death_cap, green, green, 6, 15, 5, 12, 1, 3, poisonous, 'Один із найнебезпечніших грибів, легко сплутати з сироїжками чи шампіньйонами.').
+
+mushroom(birch_bolete, gray, brown, 8, 18, 5, 15, 2, 5, edible, 'Росте біля беріз, часто групами або поодинці. Один із найпоширеніших трубчастих грибів.').
+
+mushroom(honey_fungus, brown, yellow, 6, 12, 3, 10, 0.5, 1.5, edible, 'Опис: Росте великими групами на пнях, коренях або біля дерев. Має кільце на ніжці — характерну "спідничку".').
+mushroom(honey_fungus, light_brown, yellow, 6, 12, 3, 10, 0.5, 1.5, edible, 'Опис: Росте великими групами на пнях, коренях або біля дерев. Має кільце на ніжці — характерну "спідничку".').
+mushroom(honey_fungus, brown, light_brown, 6, 12, 3, 10, 0.5, 1.5, edible, 'Опис: Росте великими групами на пнях, коренях або біля дерев. Має кільце на ніжці — характерну "спідничку".').
+mushroom(honey_fungus, light_brown, light_brown, 6, 12, 3, 10, 0.5, 1.5, edible, 'Опис: Росте великими групами на пнях, коренях або біля дерев. Має кільце на ніжці — характерну "спідничку".').
+mushroom(honey_fungus, white, yellow, 6, 12, 3, 10, 0.5, 1.5, edible, 'Опис: Росте великими групами на пнях, коренях або біля дерев. Має кільце на ніжці — характерну "спідничку".').
+mushroom(honey_fungus, white, light_brown, 6, 12, 3, 10, 0.5, 1.5, edible, 'Опис: Росте великими групами на пнях, коренях або біля дерев. Має кільце на ніжці — характерну "спідничку".').
+
+mushroom(saffron_milk_cap, yellow, brown, 4, 10, 4, 15, 1, 2.5, edible, 'Росте в соснових лісах, часто після дощу. Має слизьку шапку.').
+mushroom(saffron_milk_cap, white, brown, 4, 10, 4, 15, 1, 2.5, edible, 'Росте в соснових лісах, часто після дощу. Має слизьку шапку.').
+mushroom(saffron_milk_cap, yellow, yellow, 4, 10, 4, 15, 1, 2.5, edible, 'Росте в соснових лісах, часто після дощу. Має слизьку шапку.').
+mushroom(saffron_milk_cap, white, yellow, 4, 10, 4, 15, 1, 2.5, edible, 'Росте в соснових лісах, часто після дощу. Має слизьку шапку.').
+
+mushroom(slippery_jack, yellow, yellow, 3, 7, 4, 10, 1, 2, edible, 'більш помараневий, ніж лисичка').
+
+mushroom(russulas, white, red, 4, 8, 4, 10, 1, 2, half_edible, 'ніжка - Біла, з рожевим або червонуватим відтінком, Краще вживати тільки відомі, м’які на смак види.').
+mushroom(russulas, white, green, 4, 8, 4, 10, 1, 2, half_edible, 'ніжка - Біла, з рожевим або червонуватим відтінком, Краще вживати тільки відомі, м’які на смак види.').
+
+mushroom(bay_bolete, yellow, brown, 5, 12, 5, 15, 1.3, 3, edible, ' Схожий на білий гриб, але з темнішою шапкою. Росте в хвойних і змішаних лісах.').
+mushroom(bay_bolete, light_brown, brown, 5, 12, 5, 15, 1.3, 3, edible, ' Схожий на білий гриб, але з темнішою шапкою. Росте в хвойних і змішаних лісах.').
+mushroom(bay_bolete, yellow, dark_brown, 5, 12, 5, 15, 1.3, 3, edible, ' Схожий на білий гриб, але з темнішою шапкою. Росте в хвойних і змішаних лісах.').
+mushroom(bay_bolete, light_brown, dark_brown, 5, 12, 5, 15, 1.3, 3, edible, ' Схожий на білий гриб, але з темнішою шапкою. Росте в хвойних і змішаних лісах.').
+
+mushroom(hedgehog_mushrooms, light_brown, light_brown, 4, 8, 4, 8, 1, 2.5, edible, 'Має оригінальну будову — замість пластинок на звороті шапки має «колючки').
+mushroom(hedgehog_mushrooms, white, light_brown, 4, 8, 4, 8, 1, 2.5, edible, 'Має оригінальну будову — замість пластинок на звороті шапки має «колючки').
+mushroom(hedgehog_mushrooms, light_brown, yellow, 4, 8, 4, 8, 1, 2.5, edible, 'Має оригінальну будову — замість пластинок на звороті шапки має «колючки').
+mushroom(hedgehog_mushrooms, white, yellow, 4, 8, 4, 8, 1, 2.5, edible, 'Має оригінальну будову — замість пластинок на звороті шапки має «колючки').
+
+
+            
+
 
 % ПРАВИЛА
 
-suspect(X) :- person(X), motive(X), closer(X).
-witness(X) :- person(X), see(X, _).
-guilty(X) :- suspect(X), \+ alibi(X).</textarea>
+mushroom_info(StemColor, CapColor, StemLength, CapDiameter, StemDiameter, Name, Edibility, Desc) :-
+    mushroom(Name, StemColor, CapColor,
+             MinStemLength, MaxStemLength,
+             MinCapDiameter, MaxCapDiameter,
+             MinStemDiameter, MaxStemDiameter,
+             Edibility, Desc),
+    StemLength >= MinStemLength, StemLength =< MaxStemLength,
+    CapDiameter >= MinCapDiameter, CapDiameter =< MaxCapDiameter,
+    StemDiameter >= MinStemDiameter, StemDiameter =< MaxStemDiameter.</textarea>
         
-        <h2>Query</h2>
-        <input class="example-textinput example-goal" type="text" id="name" onKeyup="changeName();" value="" placeholder="Enter a name" />
+        <h2>Колір ніжки</h2>
+        <select class="example-textinput example-goal" id="StemColor">
+            <option value="" disabled selected>оберіть колір</option>
+            <option value="light_brown">світло коричневий</option>
+            <option value="white">білий</option>
+            <option value="yellow">жовтий/рижий</option>
+            <option value="gray">сірий</option>
+            <option value="green">зелений</option>
+            <option value="brown">коричневий</option>
+        </select>
+
+        <h2>Колір шапки</h2>
+        <select class="example-textinput example-goal" id="CapColor">
+            <option value="" disabled selected>оберіть колір</option>
+            <option value="dark_brown">темно коричневий</option>
+            <option value="brown">коричневий</option>
+            <option value="red">червоний</option>
+            <option value="yellow">жовтий/рижий</option>
+            <option value="green">зелений</option>
+            <option value="light_brown">світло коричневий</option>
+        </select>
+
+        <h2>Довжина ніжки</h2>
+        <input type="number" class="example-textinput example-goal" id="StemLength" placeholder="введіть довжину ніжки (см)" />
+        <h2>Діаметр шапки</h2>
+        <input type="number" class="example-textinput example-goal" id="CapDiameter" placeholder="введіть діаметр шапки ніжки (см)" />
+        <h2>Діаметр ніжки</h2>
+        <input type="number" class="example-textinput example-goal" id="StemDiameter" placeholder="введіть діаметр шапки ніжки (см)" />
+
+        <input class="example-button" type="button" value="Показати відповідні гриби" id="button" onClick="clickButtonMushroom();" />
         
-        <input class="example-button" type="button" value="Показати всіх свідків" id="button" onClick="clickButtonWitness();" />
-        <input class="example-button" type="button" value="Показати всіх винних" id="button" onClick="clickButtonGuilty();" />
-        
-        <h2>Results</h2>
+        <h2></h2>
         <div class="example-result" id="result"></div>
     </div>
 
     <script type="text/javascript">
-    function showWitness(name) {
-        // Отримуємо контейнер для виводу
-        var result = document.getElementById("result");
-        // Повертаємо функцію зворотного виклику
-        return function(answer) {
-            // Перевіряємо чи відповідь валідна
-            if(pl.type.is_substitution(answer)) {
-                // Отримуємо значення відповіді
-                var who = answer.lookup("X");
-                // Отримуємо ім'я особи
-                var person = name != "Y" ? name : answer.lookup("Y");
-                // Показуємо відповідь
-                result.innerHTML = result.innerHTML + "<div>" + person + " бачив " + who + "</div>";
-            }
-        };
-    }
+    // Словник з перекладом грибів
+    const mushroomDictionary = {
+        "cep": "Білий гриб",
+        "fly_agaric": "Мухомор",
+        "chanterelle": "Лисичка",
+        "death_cap": "Бліда поганка",
+        "birch_bolete": "Підберезник",
+        "false_chanterelle": "Лисичка несправжня",
+        "honey_fungus": "Опеньок осінній",
+        "saffron_milk_cap": "Маслюк",
+        "slippery_jack": "Рижик",
+        "russulas": "Сироїжка",
+        "bay_bolete": "Польський гриб",
+        "hedgehog_mushrooms": "Їжовик"
+    };
 
-    function showGuilty() {
+    // Словник з перекладом їстівності
+    const edibilityDictionary = {
+        "edible": "їстівний",
+        "poisonous": "неїстівний",
+        "half_edible": "частково їстівний"
+    };
+
+    function showMushroom() {
         // Отримуємо контейнер для виводу
         var result = document.getElementById("result");
         // Повертаємо функцію зворотного виклику
         return function(answer) {
-            // Перевіряємо чи відповідь валідна
-            if(pl.type.is_substitution(answer)) {
+            if (pl.type.is_substitution(answer)) {
                 // Отримуємо значення відповіді
-                var who = answer.lookup("X");
-                // Показуємо відповідь
-                result.innerHTML = result.innerHTML + "<div>" + who + " винний</div>";
+                var name = answer.lookup("X");
+                var edibility = answer.lookup("Y");
+                var desc = answer.lookup("Z");  
+                // join desc list to string
+                // Отримуємо українську назву гриба
+                var translatedName = mushroomDictionary[name] || name;
+                // Отримуємо переклад їстівності
+                var translatedEdibility = edibilityDictionary[edibility] || edibility;
+                // Додаємо результат до контейнера
+                result.innerHTML += `<div>Гриб: ${translatedName}, Їстівність: ${translatedEdibility}, Опис: ${desc}</div>`;
+            } else {
+                result.innerHTML += `<div>Більше немає відповідних грибів.</div>`;
             }
         };
     }
     
-    // Показати кого бачив свідок
-    function see(name) {
+   
+    function clickButtonMushroom() {
+        var StemColor = document.getElementById("StemColor").value;
+        var CapColor = document.getElementById("CapColor").value;
+        var StemDiameter = document.getElementById("StemDiameter").value;
+        var StemLength = document.getElementById("StemLength").value;
+        var CapDiameter = document.getElementById("CapDiameter").value;
+
+        // Перевіряємо чи всі поля заповнені
+        if (StemColor == "" || CapColor == "" || StemDiameter == "" || CapDiameter == "" || StemLength == "") {
+            alert("Заповніть всі поля!");
+            return;
+        }
+
         var session = pl.create(1000);
         // Отримуємо програму
         var program = document.getElementById("program").value;
@@ -122,48 +184,14 @@ guilty(X) :- suspect(X), \+ alibi(X).</textarea>
         // Консультуємося з програмою
         session.consult(program);
         // Формуємо запит
-        session.query("see(" + name + ", X).");
-        // Шукаємо відповіді
-        session.answers(showWitness(name), 1000);
-    }
+        //session.query("see(" + name + ", X).");
+        query = "mushroom_info(" + StemColor + ", " + CapColor + ", " + StemLength + ", " + CapDiameter + ", " + StemDiameter + ", X, Y, Z).";
+        session.query(query);
 
-    // Показати всіх винних
-    function guilty() {
-        var session = pl.create(1000);
-        // Отримуємо програму
-        var program = document.getElementById("program").value;
-        // Очищаємо вивід
-        document.getElementById("result").innerHTML = "";
-        // Консультуємося з програмою
-        session.consult(program);
-        // Формуємо запит
-        session.query("guilty(X).");
         // Шукаємо відповіді
-        session.answers(showGuilty(), 1000);
+        session.answers(showMushroom(), 1000);
     }
     
-    function clickButtonWitness() {
-        // Отримуємо ім'я особи
-        var name = document.getElementById("name").value;
-        name = name != "" ? name : "Y";
-        // Отримуємо вподобання
-        see(name);
-    }
-
-    function clickButtonGuilty() {
-        // Отримуємо ім'я особи
-        var name = document.getElementById("name").value;
-        name = name != "" ? name : "Y";
-        // Отримуємо винних
-        guilty(name);
-    }
-    
-    // При зміні імені
-    function changeName() {
-        var name = document.getElementById("name").value;
-        document.getElementById("button").value = name != "" ? "Кого бачив " + name  + "?" : "Показати всіх свідків";
-    }
-    changeName();
     </script>
 
 </body>

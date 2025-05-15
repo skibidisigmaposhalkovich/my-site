@@ -3,19 +3,20 @@ body {
     line-height: 1.8;
     margin: 0;
     padding: 0;
-    color: #2c3e50;
-    background: #ecf0f1;
+    color: #4b3f2f; /* Темно-коричневий */
+    background: #f7f3e9; /* Світло-бежевий */
 }
 
 header {
-    background: linear-gradient(135deg, #1abc9c, #3498db);
+    background: linear-gradient(135deg, #8c6d31, #4b3f2f); /* Відтінки коричневого */
     padding: 40px;
     text-align: center;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    color: #f7f3e9; /* Світлий текст */
 }
 
 section {
-    background: white;
+    background: #ffffff; /* Білий фон */
     padding: 30px;
     margin: 30px;
     border-radius: 15px;
@@ -23,7 +24,7 @@ section {
 }
 
 h1, h2, h3 {
-    color: #2c3e50;
+    color: #4b3f2f; /* Темно-коричневий */
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -36,8 +37,8 @@ ul {
 li {
     margin-bottom: 15px;
     padding: 10px;
-    border-left: 4px solid #3498db;
-    background: #f8f9fa;
+    border-left: 4px solid #8c6d31; /* Коричневий акцент */
+    background: #f9f5e9; /* Світлий бежевий */
 }
 
 form {
@@ -49,25 +50,25 @@ form {
 
 label {
     font-weight: 600;
-    color: #34495e;
+    color: #4b3f2f; /* Темно-коричневий */
 }
 
 input, textarea {
     padding: 12px;
-    border: 2px solid #bdc3c7;
+    border: 2px solid #c2b280; /* Світло-коричневий */
     border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 input:focus, textarea:focus {
-    border-color: #3498db;
+    border-color: #8c6d31; /* Коричневий */
     outline: none;
-    box-shadow: 0 0 5px rgba(52,152,219,0.3);
+    box-shadow: 0 0 5px rgba(140, 109, 49, 0.3);
 }
 
 button {
     padding: 12px 24px;
-    background: linear-gradient(45deg, #3498db, #2980b9);
+    background: linear-gradient(45deg, #8c6d31, #4b3f2f); /* Коричневий градієнт */
     color: white;
     border: none;
     border-radius: 8px;
@@ -77,13 +78,13 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(45deg, #2980b9, #2c3e50);
+    background: linear-gradient(45deg, #4b3f2f, #2f261b); /* Темніший коричневий */
     transform: translateY(-2px);
 }
 
 footer {
-    background: #000000;
-    color: white;
+    background: #4b3f2f; /* Темно-коричневий */
+    color: #f7f3e9; /* Світлий текст */
     text-align: center;
     padding: 20px;
     width: 100%;
@@ -92,5 +93,6 @@ footer {
 }
 
 footer a {
-    color: white;
+    color: #f7f3e9; /* Світлий текст */
+    text-decoration: underline;
 }

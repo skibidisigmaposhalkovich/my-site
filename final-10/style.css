@@ -1,96 +1,115 @@
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.8;
-    margin: 0;
-    padding: 0;
-    color: #2c3e50;
-    background: #ecf0f1;
-}
-
-header {
-    background: linear-gradient(135deg, #1abc9c, #3498db);
-    padding: 40px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-}
-
-section {
-    background: white;
-    padding: 30px;
-    margin: 30px;
-    border-radius: 15px;
-    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
-}
-
-h1, h2, h3 {
-    color: #2c3e50;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-ul {
-    padding: 0 20px;
-    list-style-type: none;
-}
-
-li {
-    margin-bottom: 15px;
-    padding: 10px;
-    border-left: 4px solid #3498db;
-    background: #f8f9fa;
-}
-
-form {
-    display: grid;
-    gap: 15px;
-    max-width: 600px;
+    font-family: 'Arial', sans-serif;
+    max-width: 800px;
     margin: 0 auto;
+    padding: 20px;
+    background-color: #fff1e0; /* Світлий фон */
+    color: #333; /* Темний текст */
+    line-height: 1.6;
+    background-image: 
+        url('https://example.com/mushroom.png'), /* Напівпрозорий гриб */
+        url('https://www.transparenttextures.com/patterns/paper-fibers.png'); /* Легка текстура */
+    background-size: 300px, auto; /* Розмір гриба та текстури */
+    background-repeat: no-repeat, repeat; /* Гриб не повторюється, текстура повторюється */
+    background-position: center center, top left; /* Гриб по центру, текстура зверху зліва */
+    background-blend-mode: lighten; /* Легкий ефект змішування */
 }
 
-label {
-    font-weight: 600;
-    color: #34495e;
+h1 {
+    text-align: center;
+    color: #4a7c59; /* Темно-зелений колір */
+    margin-bottom: 20px;
+    font-size: 2.8em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Легкий тіньовий ефект */
+    font-family: 'Georgia', serif; /* Декоративний шрифт */
 }
 
-input, textarea {
+h2 {
+    color: #6b4226; /* Коричневий колір */
+    margin-top: 20px;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.example-textinput {
+    width: 100%;
+    margin: 10px 0;
     padding: 12px;
-    border: 2px solid #bdc3c7;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    border: 1px solid #ccc; /* Світло-сірий */
+    border-radius: 12px; /* Округлі краї */
+    font-size: 1em;
+    background-color: #fff; /* Білий фон */
+    color: #333; /* Темний текст */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Легка тінь */
 }
 
-input:focus, textarea:focus {
-    border-color: #3498db;
-    outline: none;
-    box-shadow: 0 0 5px rgba(52,152,219,0.3);
+.example-program {
+    height: 140px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 0.9em;
+    background-color: #f5f5f5; /* Світло-сірий фон */
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 10px;
+    overflow: auto;
+    color: #333; /* Темний текст */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-button {
+.example-button {
     padding: 12px 24px;
-    background: linear-gradient(45deg, #3498db, #2980b9);
+    background: #4a7c59; /* Темно-зелений */
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 12px;
     cursor: pointer;
-    font-weight: 600;
-    transition: transform 0.2s ease;
+    font-size: 1.2em;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-button:hover {
-    background: linear-gradient(45deg, #2980b9, #2c3e50);
-    transform: translateY(-2px);
+.example-button:hover {
+    background: #3b6247; /* Темніший зелений */
+    transform: scale(1.05); /* Легке збільшення */
+}
+
+.example-result {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc; /* Світло-сірий */
+    border-radius: 12px;
+    background-color: #fff; /* Білий фон */
+    color: #333; /* Темний текст */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    min-height: 120px;
+    font-size: 1em;
+}
+
+textarea {
+    display: none;
+}
+
+select, input[type="number"] {
+    font-size: 1em;
+    padding: 12px;
+    border: 1px solid #ccc; /* Світло-сірий */
+    border-radius: 12px;
+    width: calc(100% - 24px);
+    margin-bottom: 12px;
+    background-color: #fff; /* Білий фон */
+    color: #333; /* Темний текст */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"]::placeholder {
+    color: #aaa;
 }
 
 footer {
-    background: #000000;
-    color: white;
     text-align: center;
-    padding: 20px;
-    width: 100%;
-    bottom: 0;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-}
-
-footer a {
-    color: white;
+    margin-top: 30px;
+    font-size: 0.9em;
+    color: #6b4226; /* Коричневий */
+    padding-top: 15px;
+    font-family: 'Georgia', serif;
 }
